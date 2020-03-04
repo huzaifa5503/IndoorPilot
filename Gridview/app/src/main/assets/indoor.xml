@@ -10,7 +10,7 @@
 			<mac>58B6330C6DF4=3</mac>
 			<mac>58B6330CJ788=5</mac>
 			<mac>58B6330C67GG=3</mac>
-			<mac>58B6330C0099=125</mac>
+			<mac>58B6330C0099=13</mac>
 		</mac-addresses>
    </room>
 	<room>
@@ -32,11 +32,11 @@
 		<floor>1</floor>
 		<category>Class</category>
 		<mac-addresses>
-			<mac>58B6330C6EC8=47</mac>
-			<mac>58B6330C6DF4=39</mac>
-			<mac>58B6330CJ788=35</mac>
-			<mac>58B6330C67GG=30</mac>
-			<mac>58B6330C0099=25</mac>
+			<mac>58B6330C6EC8=55</mac>
+			<mac>58B6330C6DF4=44</mac>
+			<mac>58B6330CJ788=20</mac>
+			<mac>58B6330C67GG=22</mac>
+			<mac>58B6330C0099=15</mac>
 		</mac-addresses>
 	</room>
 	<room>
@@ -45,11 +45,11 @@
 		<floor>1</floor>
 		<category>Class</category>
 		<mac-addresses>
-			<mac>58B6330C6EC8=47</mac>
-			<mac>58B6330C6DF4=39</mac>
-			<mac>58B6330CJ788=35</mac>
-			<mac>58B6330C67GG=30</mac>
-			<mac>58B6330C0099=25</mac>
+			<mac>58B6330C6EC8=43</mac>
+			<mac>58B6330C6DF4=20</mac>
+			<mac>58B6330CJ788=19</mac>
+			<mac>58B6330C67GG=15</mac>
+			<mac>58B6330C0099=12</mac>
 		</mac-addresses>
 	</room>
 	<room>
@@ -58,11 +58,11 @@
 		<floor>1</floor>
 		<category>Class</category>
 		<mac-addresses>
-			<mac>58B6330C6EC8=47</mac>
-			<mac>58B6330C6DF4=39</mac>
-			<mac>58B6330CJ788=35</mac>
-			<mac>58B6330C67GG=30</mac>
-			<mac>58B6330C0099=25</mac>
+			<mac>58B6330C6EC8=40</mac>
+			<mac>58B6330C6DF4=34</mac>
+			<mac>58B6330CJ788=30</mac>
+			<mac>58B6330C67GG=25</mac>
+			<mac>58B6330C0099=15</mac>
 		</mac-addresses>
 	</room>
 	<room>
@@ -71,11 +71,11 @@
 		<floor>1</floor>
 		<category>Class</category>
 		<mac-addresses>
-			<mac>58B6330C6EC8=47</mac>
-			<mac>58B6330C6DF4=39</mac>
-			<mac>58B6330CJ788=35</mac>
-			<mac>58B6330C67GG=30</mac>
-			<mac>58B6330C0099=25</mac>
+			<mac>58B6330C6EC8=40</mac>
+			<mac>58B6330C6DF4=30</mac>
+			<mac>58B6330CJ788=29</mac>
+			<mac>58B6330C67GG=23</mac>
+			<mac>58B6330C0099=20</mac>
 		</mac-addresses>
 	</room>
 	<room>
@@ -84,11 +84,11 @@
 		<floor>1</floor>
 		<category>Class</category>
 		<mac-addresses>
-			<mac>58B6330C6EC8=47</mac>
-			<mac>58B6330C6DF4=39</mac>
+			<mac>58B6330C6EC8=45</mac>
+			<mac>58B6330C6DF4=40</mac>
 			<mac>58B6330CJ788=35</mac>
 			<mac>58B6330C67GG=30</mac>
-			<mac>58B6330C0099=25</mac>
+			<mac>58B6330C0099=20</mac>
 		</mac-addresses>
 	</room>
 	<room>
@@ -97,11 +97,11 @@
 		<floor>1</floor>
 		<category>Class</category>
 		<mac-addresses>
-			<mac>58B6330C6EC8=47</mac>
-			<mac>58B6330C6DF4=39</mac>
-			<mac>58B6330CJ788=35</mac>
-			<mac>58B6330C67GG=30</mac>
-			<mac>58B6330C0099=25</mac>
+			<mac>58B6330C6EC8=50</mac>
+			<mac>58B6330C6DF4=40</mac>
+			<mac>58B6330CJ788=30</mac>
+			<mac>58B6330C67GG=25</mac>
+			<mac>58B6330C0099=23</mac>
 		</mac-addresses>
 	</room>
 	<room>
@@ -110,11 +110,11 @@
 		<floor>1</floor>
 		<category>Class</category>
 		<mac-addresses>
-			<mac>58B6330C6EC8=47</mac>
-			<mac>58B6330C6DF4=39</mac>
-			<mac>58B6330CJ788=35</mac>
-			<mac>58B6330C67GG=30</mac>
-			<mac>58B6330C0099=25</mac>
+			<mac>58B6330C6EC8=46</mac>
+			<mac>58B6330C6DF4=38</mac>
+			<mac>58B6330CJ788=32</mac>
+			<mac>58B6330C67GG=20</mac>
+			<mac>58B6330C0099=15</mac>
 		</mac-addresses>
 	</room>
 	<room>
@@ -123,11 +123,11 @@
 		<floor>1</floor>
 		<category>Class</category>
 		<mac-addresses>
-			<mac>58B6330C6EC8=47</mac>
+			<mac>58B6330C6EC8=40</mac>
 			<mac>58B6330C6DF4=39</mac>
-			<mac>58B6330CJ788=35</mac>
-			<mac>58B6330C67GG=30</mac>
-			<mac>58B6330C0099=25</mac>
+			<mac>58B6330CJ788=29</mac>
+			<mac>58B6330C67GG=25</mac>
+			<mac>58B6330C0099=17</mac>
 		</mac-addresses>
 	</room>
 	<room>
@@ -136,11 +136,11 @@
 		<floor>1</floor>
 		<category>Class</category>
 		<mac-addresses>
-			<mac>58B6330C6EC8=47</mac>
-			<mac>58B6330C6DF4=39</mac>
-			<mac>58B6330CJ788=35</mac>
-			<mac>58B6330C67GG=30</mac>
-			<mac>58B6330C0099=25</mac>
+			<mac>58B6330C6EC8=60</mac>
+			<mac>58B6330C6DF4=56</mac>
+			<mac>58B6330CJ788=45</mac>
+			<mac>58B6330C67GG=24</mac>
+			<mac>58B6330C0099=20</mac>
 		</mac-addresses>
 	</room>
 	<room>
@@ -152,7 +152,7 @@
 			<mac>58B6330C6EC8=4</mac>
 			<mac>58B6330C6DF4=9</mac>
 			<mac>58B6330CJ788=5</mac>
-			<mac>58B6330C67GG=0</mac>
+			<mac>58B6330C67GG=20</mac>
 			<mac>58B6330C0099=5</mac>
 		</mac-addresses>
 	</room>

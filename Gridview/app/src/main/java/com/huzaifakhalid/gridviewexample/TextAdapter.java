@@ -2,7 +2,9 @@ package com.huzaifakhalid.gridviewexample;
 
 import android.content.Context;
 import android.graphics.Color;
+import java.lang.*;
 import android.os.Environment;
+import android.provider.ContactsContract;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
@@ -43,14 +45,17 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import static android.media.CamcorderProfile.get;
 import static com.huzaifakhalid.gridviewexample.R.drawable.logo1;
 
 
 public class TextAdapter extends BaseAdapter {
 
 
+    MacAddress[] macList_phone;
     Context mycontext;
     int size;
+
     ImageView background;
     File file = new File("D:/Semester 7/SMD/Lab11_2/Gridview/app/src/main/assets/indoor.xml");
 
@@ -84,6 +89,12 @@ public class TextAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         String[] fetchedMacs={"58B6330C6EC8=47","58B6330C6DF4=35","58B6330CJ788=33","58B6330C67GG=29"}; //the value of MACS and their strengths fetched from phone
+        int fetchedMacsLen=fetchedMacs.length;
+        macList_phone=new MacAddress[fetchedMacsLen];
+        for (int fet=0;fet<fetchedMacsLen;fet++){
+            macList_phone[fet]= parseMac(fetchedMacs[fet]); // parsing data from phone on the base of "=" and saving it in Macaddress object
+            Log.d("fetchlist","mac: " + macList_phone[fet].mac + "Strength: " + macList_phone[fet].strength );
+        }
         String num="";
         String name="";
         String floor="";
@@ -120,7 +131,7 @@ public class TextAdapter extends BaseAdapter {
                         category = el.getElementsByTagName("category").item(0).getTextContent();
 
                         NodeList macNodeList = el.getElementsByTagName("mac-addresses").item(0).getChildNodes();
-                        /*
+
                         List<String> macList = new ArrayList<String>();
 
                         for (int k = 0; k < macNodeList.getLength(); k++) {
@@ -129,25 +140,30 @@ public class TextAdapter extends BaseAdapter {
                                 macList.add(temp);
                             }
 
-                        }*/
+                        }
 
 
-                        //roomList.add(new Room(name, floor, category, num, macList));
+                        roomList.add(new Room(name, floor, category, num, macList));
 
 
-                       // List<String> macList = new ArrayList<String>(Arrays.asList(mac.split("\n")));
+
+
+
+
+                           for (int z = 0 ; z < roomList.size(); z++) {
+
+                               Log.d("maclistfrom", "Roomsize: " + roomList.size() + "list of macs : " + roomList.get(z).getMacAddressList() + "room no: " + roomList.get(z).getName());
+                           }
+
+
+
+                        //MacAddress savedStr = parseMac("58B6330C6EC8=47");
+
+                       //List<String> macList = new ArrayList<String>(Arrays.asList(mac.split("\n")));
 
 
 
                         //macadds.add(mac);
-                        /*
-                        for (int u = 0 ; u < roomList.size(); u++){
-
-                            Log.d("mylist","checklist: " + macList.get(u));
-
-                            Log.d("roomList","roomList contains :   " + roomList.get(u).getGridnum() + "  "+ roomList.get(u).getName()+ "  " +roomList.get(u).getFloor() + "  " +roomList.get(u).getCategory() + "  " +roomList.get(u).getMacAddressList() );
-                        }*/
-
                         //aik aur for loop
                         //store all macs in a list
 
@@ -173,68 +189,13 @@ public class TextAdapter extends BaseAdapter {
                     }
                 }
             }
+            CalculateLocation(macList_phone, roomList);
            // Log.d("sizer","arraylist size is  "+  macadds.size());
            // for(int n = 0; n < macadds.size(); n++) {
                // System.out.print(macadds.get(n));
               //  Log.d("macer","arraylist is as follows  "+  macadds.get(n));
 
            // }
-
-            Object[] array = macadds.toArray();
-            String obj = Arrays.toString(array);
-            Log.d("array","arraylist  is  "+  obj);
-            Log.d("array","arraylist SIZE is  "+  obj.length());
-
-            String[] arrOfStr2 = obj.split(",");
-            Log.d("array","arraylist Split size is  "+  arrOfStr2[0]);
-
-            String[] arrOfStrsplit={""};
-            String[] arrOfStrsplitequals= {""};
-            for (int check = 0 ; check < arrOfStr2.length; check++){
-
-                 arrOfStrsplit = obj.split("\n");
-                Log.d("check","arraylist after spliting is  "+  arrOfStrsplit[check]);
-
-                for (int check1 = 0; check1 < arrOfStrsplit.length; check1++ ){
-
-                    arrOfStrsplitequals = arrOfStrsplit[check1].split("\n");
-
-
-                }
-
-
-            }
-            for (int r = 1 ; r < arrOfStrsplit.length;r++)
-                if (r % 6 == 0 || r == arrOfStrsplit.length){
-
-                }
-            else{
-
-                    Log.d("checkafter","arraylist after final split is"+  arrOfStrsplit[r]);
-
-                }
-
-
-            String[] arrOfStr={""};
-
-            for(Object o : array) {
-                String s = (String) o;
-                int d = 0 ;
-                Log.d("iter","arraylist size is  "+ s +  s.length());
-
-               arrOfStr = s.split("=");
-
-
-                d++;
-
-            }
-
-            for (String a: arrOfStr)
-                Log.d("wwww","array contains: "+ a.length());
-
-
-
-
 
 
 
@@ -315,6 +276,8 @@ public class TextAdapter extends BaseAdapter {
         return tv;
     }
 
+
+
     public int[] readIndoorData() {
 
 
@@ -370,6 +333,102 @@ public class TextAdapter extends BaseAdapter {
             }
         }
         return "";
+    }
+
+    public MacAddress parseMac(String a){
+
+        MacAddress macadd = new MacAddress();
+        String[] parsing = a.split("=");
+        macadd.mac = parsing[0];
+        macadd.strength = Integer.parseInt(parsing[1]);
+        Log.d("parse", "str1"+ macadd.mac + "str2" + macadd.strength);
+        return macadd;
+
+
+
+    }
+
+    public void CalculateLocation( MacAddress[] fetchedMacs,  List<Room> roomList){
+        int totalDiff=0;
+        int roomsize=roomList.size();
+
+        int [] SumOfRoomValues=new int[roomsize]; //stores the sum of difference for each room on each index of array
+        Log.d("roomsqqqqqqq", "roomssss: " + roomsize);
+        for(int PhoneMac = 0 ;PhoneMac<fetchedMacs.length;PhoneMac++){
+            MacAddress objMac;
+            //runs till num of MACS found by phone
+            for(int rooms = 0 ;rooms<roomList.size();rooms++){
+                // Log.d("wert", " roomlist "+roomList.size());
+
+                List <String> store= roomList.get(rooms).getMacAddressList();
+
+                // Log.d("store", " storesize" + store.get(0));
+                List <MacAddress> ListOfMacs = new ArrayList<>();
+                for(int lister=0;lister<store.size();lister++){
+                    String mac=store.get(lister);
+                    Log.d("strmac", " string mac" + mac);
+                    //get individual string and store here
+                    //parse this string to get mac and its corresponding value differently
+                    objMac = parseMac(mac);
+                    Log.d("strmacobj", " string macobj" + objMac.getMac() + objMac.getStrength());
+                    //return a MacAddress object
+                    ListOfMacs.add(objMac); //add this mac address object into list
+
+                }
+
+                Log.d("roomwwwwwwww", "roomssssLIISSSIISISISI: " + ListOfMacs.size());
+                for(int w=0;w<roomsize;w++) {
+                    for (int x = 0; x < ListOfMacs.size(); x++) { //eg list of macs for one room is 5 so x=5
+                        for (int y = 0; y < fetchedMacs.length; y++) {
+                            Log.d("msg", "ListOMacs: " + ListOfMacs.get(x).getMac() + " Fetched: " + fetchedMacs[y].getMac());
+                            if (ListOfMacs.get(x).getMac().equals(fetchedMacs[y].getMac())) { //if the mac of room matches mac of fetched data
+                                int sum = ListOfMacs.get(x).getStrength() - fetchedMacs[y].getStrength();
+                                Log.d("msgsum", "sums is: " + Math.abs(sum));
+                                if (sum < 0) {
+                                    totalDiff += Math.abs(sum);
+
+                                } else {
+                                    totalDiff += sum;
+                                }
+                            }
+                        }
+                        SumOfRoomValues[w] = totalDiff; //stores difference for one room
+                        totalDiff = 0;
+                        Log.d("tototototo", "sums is: " + totalDiff);
+                    }
+
+                }
+                //aaarai hai
+
+                for(int p = 0 ; p < SumOfRoomValues.length; p++){
+                    Log.d("asdf", "sumofroommssmms: "  + SumOfRoomValues[p]);
+                    //ListOfMacs.get()
+                }
+                //after this for loop is done we will have a list (of type MacAddresses) that contains mac values for a particular room
+                //                //if(fetchedMacs[PhoneMac]==ListOfMacs[//])
+
+
+            }
+        }
+        Log.d("sumval", "xxx: "  + SumOfRoomValues.length);
+
+            Log.d("xxx", "sumofroommssmms: "  + SumOfRoomValues[0]+SumOfRoomValues[1]+SumOfRoomValues[2]+SumOfRoomValues[3]+SumOfRoomValues[4]);
+            //ListOfMacs.get()
+
+        int lowestIndex=returnLowest(SumOfRoomValues);
+        Log.d("lowest","lowestvalue :" + SumOfRoomValues[lowestIndex] + " lowestindex: "  + lowestIndex);
+    }
+
+    public int returnLowest(int[] arr){ //returns the index of the lowest element in the array
+        int lowest=9999;
+        int lowestIndex=-1;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]<lowest){
+                lowest=arr[i];
+                lowestIndex=i;
+            }
+        }
+        return lowestIndex;
     }
 
 
