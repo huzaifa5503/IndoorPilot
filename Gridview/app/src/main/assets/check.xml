@@ -187,7 +187,7 @@
 		<gridnum>17</gridnum>
 		<name>Auditorium</name>
 		<floor>1</floor>
-		<category>Class</category>
+		<category>Auditorium</category>
 		<mac-addresses>
 			<mac>58B6330C6EC8=40</mac>
 			<mac>58B6330C6DF4=34</mac>

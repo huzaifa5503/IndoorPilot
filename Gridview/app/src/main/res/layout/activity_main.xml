@@ -40,6 +40,8 @@
                     android:scrollbarAlwaysDrawVerticalTrack="true"
                     android:scrollbars="horizontal"
                     android:stretchMode="columnWidth"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:verticalSpacing="5dp">
                 </GridView>
 

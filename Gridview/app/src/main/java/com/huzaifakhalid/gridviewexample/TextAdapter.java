@@ -39,9 +39,11 @@ import java.io.IOException;
 import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -55,6 +57,9 @@ public class TextAdapter extends BaseAdapter {
     MacAddress[] macList_phone;
     Context mycontext;
     int size;
+    Room[] roomarr ;
+
+
 
     ImageView background;
     File file = new File("D:/Semester 7/SMD/Lab11_2/Gridview/app/src/main/assets/indoor.xml");
@@ -63,6 +68,182 @@ public class TextAdapter extends BaseAdapter {
 
         mycontext = context;
         this.size = size;
+        roomarr = new Room[size];
+        List<String> macList = new ArrayList<String>();
+        macList.add("58B6330C6EC8=45");
+        macList.add("58B6330C6DF4=40");
+        macList.add("58B6330CJ788=35");
+        macList.add("58B6330C67GG=30");
+        macList.add("58B6330C0099=20");
+
+        roomarr[0] = new Room("N-01", "1", "Class", "1", macList);
+        roomarr[1] = new Room("N-01", "1", "Class", "1", macList);
+        roomarr[2] = new Room("N-01A", "1", "Class", "2", macList);
+        roomarr[3] = new Room("N-01A", "1", "Class", "2", macList);
+        roomarr[4] = new Room("N-02", "1", "Class", "3", macList);
+        roomarr[5] = new Room("N-02", "1", "Class", "3", macList);
+        roomarr[6] = new Room("N-02A", "1", "Class", "4", macList);
+        roomarr[7] = new Room("N-02A", "1", "Class", "4", macList);
+        roomarr[8] = new Room("N-03", "1", "Class", "5", macList);
+        roomarr[9] = new Room("N-03", "1", "Class", "5", macList);
+        roomarr[10] = new Room("N-03A", "1", "Class", "6", macList);
+        roomarr[11] = new Room("N-03A", "1", "Class", "6", macList);
+        roomarr[12] = new Room("N-04", "1", "Class", "7", macList);
+        roomarr[13] = new Room("N-04", "1", "Class", "7", macList);
+        roomarr[14] = new Room("N-04A", "1", "Class", "8", macList);
+        roomarr[15] = new Room("N-04A", "1", "Class", "8", macList);
+        roomarr[16] = new Room("Path", "1", "Path", "-9", macList);
+        roomarr[17] = new Room("Path", "1", "Path", "-9", macList);
+        roomarr[18] = new Room("Path", "1", "Path", "-10", macList);
+        roomarr[19] = new Room("Path", "1", "Path", "-10", macList);
+        roomarr[20] = new Room("N-08", "1", "Office", "11", macList);
+        roomarr[21] = new Room("N-08", "1", "Office", "11", macList);
+        roomarr[22] = new Room("N-09", "1", "Office", "12", macList);
+        roomarr[23] = new Room("N-09", "1", "Office", "12", macList);
+        roomarr[24] = new Room("N-09A", "1", "Office", "13", macList);
+        roomarr[25] = new Room("N-09A", "1", "Office", "13", macList);
+        roomarr[26] = new Room("Ladies Room", "1", "Washroom", "14", macList);
+        roomarr[27] = new Room("Ladies Room", "1", "Washroom", "14", macList);
+        roomarr[28] = new Room("Mens Room", "1", "Washroom", "15", macList);
+        roomarr[29] = new Room("Mens Room", "1", "Washroom", "15", macList);
+        roomarr[30] = new Room("Auditorium", "1", "Auditorium", "16", macList);
+        roomarr[31] = new Room("Auditorium", "1", "Auditorium", "16", macList);
+
+        roomarr[32] = new Room("N-01", "1", "Class", "1", macList);
+        roomarr[33] = new Room("N-01", "1", "Class", "1", macList);
+        roomarr[34] = new Room("N-01A", "1", "Class", "2", macList);
+        roomarr[35] = new Room("N-01A", "1", "Class", "2", macList);
+        roomarr[36] = new Room("N-02", "1", "Class", "3", macList);
+        roomarr[37] = new Room("N-02", "1", "Class", "3", macList);
+        roomarr[38] = new Room("N-02A", "1", "Class", "4", macList);
+        roomarr[39] = new Room("N-02A", "1", "Class", "4", macList);
+        roomarr[40] = new Room("N-03", "1", "Class", "5", macList);
+        roomarr[41] = new Room("N-03", "1", "Class", "5", macList);
+        roomarr[42] = new Room("N-03A", "1", "Class", "6", macList);
+        roomarr[43] = new Room("N-03A", "1", "Class", "6", macList);
+        roomarr[44] = new Room("N-04", "1", "Class", "7", macList);
+        roomarr[45] = new Room("N-04", "1", "Class", "7", macList);
+        roomarr[46] = new Room("N-04A", "1", "Class", "8", macList);
+        roomarr[47] = new Room("N-04A", "1", "Class", "8", macList);
+        roomarr[48] = new Room("Path", "1", "Path", "-9", macList);
+        roomarr[49] = new Room("Path", "1", "Path", "-9", macList);
+        roomarr[50] = new Room("Path", "1", "Path", "-10", macList);
+        roomarr[51] = new Room("Path", "1", "Path", "-10", macList);
+        roomarr[52] = new Room("N-08", "1", "Office", "11", macList);
+        roomarr[53] = new Room("N-08", "1", "Office", "11", macList);
+        roomarr[54] = new Room("N-09", "1", "Office", "12", macList);
+        roomarr[55] = new Room("N-09", "1", "Office", "12", macList);
+        roomarr[56] = new Room("N-09A", "1", "Office", "13", macList);
+        roomarr[57] = new Room("N-09A", "1", "Office", "13", macList);
+        roomarr[58] = new Room("Ladies Room", "1", "Washroom", "14", macList);
+        roomarr[59] = new Room("Ladies Room", "1", "Washroom", "14", macList);
+        roomarr[60] = new Room("Mens Room", "1", "Washroom", "15", macList);
+        roomarr[61] = new Room("Mens Room", "1", "Washroom", "15", macList);
+        roomarr[62] = new Room("Auditorium", "1", "Auditorium", "16", macList);
+        roomarr[63] = new Room("Auditorium", "1", "Auditorium", "16", macList);
+
+        roomarr[64] = new Room("Path", "1", "Path", "-1", macList);
+        roomarr[65] = new Room("Path", "1", "Path", "-1", macList);
+        roomarr[66] = new Room("Path", "1", "Path", "-2", macList);
+        roomarr[67] = new Room("Path", "1", "Path", "-2", macList);
+        roomarr[68] = new Room("Path", "1", "Path", "-3", macList);
+        roomarr[69] = new Room("Path", "1", "Path", "-3", macList);
+        roomarr[70] = new Room("Path", "1", "Path", "-4", macList);
+        roomarr[71] = new Room("Path", "1", "Path", "-4", macList);
+        roomarr[72] = new Room("Path", "1", "Path", "-5", macList);
+        roomarr[73] = new Room("Path", "1", "Path", "-5", macList);
+        roomarr[74] = new Room("Path", "1", "Path", "-6", macList);
+        roomarr[75] = new Room("Path", "1", "Path", "-6", macList);
+        roomarr[76] = new Room("Path", "1", "Path", "-7", macList);
+        roomarr[77] = new Room("Path", "1", "Path", "-7", macList);
+        roomarr[78] = new Room("Path", "1", "Path", "-8", macList);
+        roomarr[79] = new Room("Path", "1", "Path", "-8", macList);
+        roomarr[80] = new Room("Path", "1", "Path", "-9", macList);
+        roomarr[81] = new Room("Path", "1", "Path", "-9", macList);
+        roomarr[82] = new Room("Path", "1", "Path", "-10", macList);
+        roomarr[83] = new Room("Path", "1", "Path", "-10", macList);
+        roomarr[84] = new Room("Path", "1", "Path", "-11", macList);
+        roomarr[85] = new Room("Path", "1", "Path", "-11", macList);
+        roomarr[86] = new Room("Path", "1", "Path", "-12", macList);
+        roomarr[87] = new Room("Path", "1", "Path", "-12", macList);
+        roomarr[88] = new Room("Path", "1", "Path", "-13", macList);
+        roomarr[89] = new Room("Path", "1", "Path", "-13", macList);
+        roomarr[90] = new Room("Path", "1", "Path", "-14", macList);
+        roomarr[91] = new Room("Path", "1", "Path", "-14", macList);
+        roomarr[92] = new Room("Path", "1", "Path", "-15", macList);
+        roomarr[93] = new Room("Path", "1", "Path", "-15", macList);
+        roomarr[94] = new Room("Auditorium", "1", "Auditorium", "17", macList);
+        roomarr[95] = new Room("Auditorium", "1", "Auditorium", "17", macList);
+
+        roomarr[96]  = new Room("N-07", "1", "Admin", "18", macList);
+        roomarr[97]  = new Room("N-07", "1", "Admin", "18", macList);
+        roomarr[98]  = new Room("N-07", "1", "Admin", "19", macList);
+        roomarr[99]  = new Room("N-07", "1", "Admin", "19", macList);
+        roomarr[100] = new Room("N-07A", "1", "Admin", "20", macList);
+        roomarr[101] = new Room("N-07A", "1", "Admin", "20", macList);
+        roomarr[102] = new Room("N-07A", "1", "Admin", "21", macList);
+        roomarr[103] = new Room("N-07A", "1", "Admin", "21", macList);
+        roomarr[104] = new Room("N-07B", "1", "Admin", "22", macList);
+        roomarr[105] = new Room("N-07B", "1", "Admin", "22", macList);
+        roomarr[106] = new Room("N-05A", "1", "Admin", "23", macList);
+        roomarr[107] = new Room("N-05A", "1", "Admin", "23", macList);
+        roomarr[108] = new Room("N-05A", "1", "Admin", "24", macList);
+        roomarr[109] = new Room("N-05A", "1", "Admin", "24", macList);
+        roomarr[110] = new Room("N-05", "1", "Admin", "25", macList);
+        roomarr[111] = new Room("N-05", "1", "Admin", "25", macList);
+        roomarr[112] = new Room("Path", "1", "Path", "-16", macList);
+        roomarr[113] = new Room("Path", "1", "Path", "-16", macList);
+        roomarr[114] = new Room("Path", "1", "Path", "-17", macList);
+        roomarr[115] = new Room("Path", "1", "Path", "-17", macList);
+        roomarr[116] = new Room("N-13B", "1", "Class", "26", macList);
+        roomarr[117] = new Room("N-13B", "1", "Class", "26", macList);
+        roomarr[118] = new Room("N-13B", "1", "Class", "27", macList);
+        roomarr[119] = new Room("N-13B", "1", "Class", "27", macList);
+        roomarr[120] = new Room("Girls Common Room", "1", "Class", "28", macList);
+        roomarr[121] = new Room("Girls Common Room", "1", "Class", "28", macList);
+        roomarr[122] = new Room("N-13", "1", "Class", "29", macList);
+        roomarr[123] = new Room("N-13", "1", "Class", "29", macList);
+        roomarr[124] = new Room("N-12", "1", "Class", "30", macList);
+        roomarr[125] = new Room("N-12", "1", "Class", "30", macList);
+        roomarr[126] = new Room("Auditorium", "1", "Auditorium", "31", macList);
+        roomarr[127] = new Room("Auditorium", "1", "Auditorium", "31", macList);
+
+        roomarr[128] = new Room("N-07", "1", "Class", "18", macList);
+        roomarr[129] = new Room("N-07", "1", "Class", "18", macList);
+        roomarr[130] = new Room("N-07", "1", "Class", "19", macList);
+        roomarr[131] = new Room("N-07", "1", "Class", "19", macList);
+        roomarr[132] = new Room("N-07A", "1", "Class", "20", macList);
+        roomarr[133] = new Room("N-07A", "1", "Class", "20", macList);
+        roomarr[134] = new Room("N-07A", "1", "Class", "21", macList);
+        roomarr[135] = new Room("N-07A", "1", "Class", "21", macList);
+        roomarr[136] = new Room("N-07B", "1", "Class", "22", macList);
+        roomarr[137] = new Room("N-07B", "1", "Class", "22", macList);
+        roomarr[138] = new Room("N-05A", "1", "Admin", "23", macList);
+        roomarr[139] = new Room("N-05A", "1", "Admin", "23", macList);
+        roomarr[140] = new Room("N-05A", "1", "Admin", "24", macList);
+        roomarr[141] = new Room("N-05A", "1", "Admin", "24", macList);
+        roomarr[142] = new Room("N-05", "1", "Admin", "25", macList);
+        roomarr[143] = new Room("N-05", "1", "Admin", "25", macList);
+        roomarr[144] = new Room("Path", "1", "Path", "-16", macList);
+        roomarr[145] = new Room("Path", "1", "Path", "-16", macList);
+        roomarr[146] = new Room("Path", "1", "Path", "-17", macList);
+        roomarr[147] = new Room("Path", "1", "Path", "-17", macList);
+        roomarr[148] = new Room("N-13B", "1", "Class", "26", macList);
+        roomarr[149] = new Room("N-13B", "1", "Class", "26", macList);
+        roomarr[150] = new Room("N-13B", "1", "Class", "27", macList);
+        roomarr[151] = new Room("N-13B", "1", "Class", "27", macList);
+        roomarr[152] = new Room("Girls Common Room", "1", "Class", "28", macList);
+        roomarr[153] = new Room("Girls Common Room", "1", "Class", "28", macList);
+        roomarr[154] = new Room("N-13", "1", "Class", "29", macList);
+        roomarr[155] = new Room("N-13", "1", "Class", "29", macList);
+        roomarr[156] = new Room("N-12", "1", "Class", "30", macList);
+        roomarr[157] = new Room("N-12", "1", "Class", "30", macList);
+        roomarr[158] = new Room("Auditorium", "1", "Auditorium", "31", macList);
+        roomarr[159] = new Room("Auditorium", "1", "Auditorium", "31", macList);
+
+
+
+
 
 
     }
@@ -89,6 +270,7 @@ public class TextAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
+        Log.d("iszie", "value I sizzzz: "+ roomarr.length);
         Log.d("ival", "value I KIII: "+ i);
         String[] fetchedMacs={"58B6330C6EC8=47","58B6330C6DF4=35","58B6330CJ788=33","58B6330C67GG=29"}; //the value of MACS and their strengths fetched from phone
         int fetchedMacsLen=fetchedMacs.length;
@@ -97,6 +279,9 @@ public class TextAdapter extends BaseAdapter {
             macList_phone[fet]= parseMac(fetchedMacs[fet]); // parsing data from phone on the base of "=" and saving it in Macaddress object
             Log.d("fetchlist","mac: " + macList_phone[fet].mac + "Strength: " + macList_phone[fet].strength );
         }
+
+
+
         String num="";
         String name="";
         String floor="";
@@ -140,12 +325,18 @@ public class TextAdapter extends BaseAdapter {
                             String temp = macNodeList.item(k).getTextContent().trim();
                             if (temp != "" && temp.length() > 12) {
                                 macList.add(temp);
+
                             }
 
                         }
 
 
                         roomList.add(new Room(name, floor, category, num, macList));
+
+
+
+
+
 
 
 
@@ -177,8 +368,10 @@ public class TextAdapter extends BaseAdapter {
 
                             tv.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 350));
 
-                            if (name.equals("Path"))
-                            tv.setText("");
+                            if (name.equals("Path")) {
+
+                                tv.setText("");
+                            }
                             else{
                                 tv.setText(name);
                             }
@@ -186,90 +379,23 @@ public class TextAdapter extends BaseAdapter {
 
 
 
+
                     }
+
 
                 }
 
+
             }
-            //CalculateLocation(macList_phone, roomList);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-               /* if (node.getNodeType() == Node.ELEMENT_NODE) {
-
-                    Element element2 = (Element) node;
-                    String gridnum = getValue("gridnum", element2, i);
-
-                    Log.d("gridnum", "it contains: "+ gridnum);
-                   // if (val ==  Integer.parseInt(gridnum) && val > 0){
-                        tv.setTextSize(15);
-                        tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                        tv.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 200));
-                        tv.setText(tv.getText() + "\nName : " + getValue("name", element2, i) + "\n");
-                    //}
-                    //Checking to see if path is found, filling it with nothing if yes
-                    //else if(val ==  Integer.parseInt(gridnum) && val < 0){
-                        //tv.setBackgroundColor(Color.parseColor("#000000"));
-                        //tv.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 200));
-                    //}
-
-
-
-
-
-
-                }*/
-
+            if(i>=getCount()-1){
+                CalculateLocation(macList_phone, roomList);
+               // displayVals(roomarr);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
-
-
-    //search xml for value
-        //return value into string
-        //set text to string
-        //tv.setText(value);
-        //tv.setTextSize(10);
-        //It is a room
-
-
-        /*if (i % 14 == 0 || i % 14 == 1) {
-            tv.setText("Room #" + i);
-            tv.setTextSize(10);
-            tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
-            tv.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 200));
-            return tv;
-        }
-        if (i % 7 == 0 && i != 70 && i != 140 && i != 210 && i != 280) {
-
-            tv.setText("Path");
-            tv.setTextSize(10);
-            tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
-            tv.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 200));
-            return tv;
-        } else {
-            tv.setText("unwalkable path");
-            tv.setTextSize(15);
-            tv.setTextColor(Color.parseColor("#FFFFFF"));
-            tv.setBackgroundColor(Color.parseColor("#000000"));
-            tv.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 200));
-            return tv;
-        }*/
 
 
         return tv;
@@ -312,6 +438,16 @@ public class TextAdapter extends BaseAdapter {
         return gridMap;
     }
 
+   /* public void displayVals(Room[]  arr){
+        for(int i=0;i<arr.length;i++){
+            Log.d("CHECKING", "ayeehehe: "+ roomarr[i].getCategory()+
+                    roomarr[i].getFloor()+
+                    roomarr[i].getGridnum()+
+                    roomarr[i].getMacAddressList()+
+                    roomarr[i].getName());
+        }
+    }
+*/
 
     private static String getValue(String tag, Element element, int val) {
         NodeList nodeList = element.getElementsByTagName(tag).item(val).getChildNodes();
@@ -352,74 +488,46 @@ public class TextAdapter extends BaseAdapter {
 
 
     public void CalculateLocation( MacAddress[] fetchedMacs,  List<Room> roomList){
-        int totalDiff=0;
-        int roomsize=roomList.size();
 
-        int [] SumOfRoomValues=new int[roomsize]; //stores the sum of difference for each room on each index of array
-        Log.d("roomsqqqqqqq", "roomssss: " + roomsize);
-        for(int PhoneMac = 0 ;PhoneMac<fetchedMacs.length;PhoneMac++){
-            MacAddress objMac;
-            //runs till num of MACS found by phone
-            for(int rooms = 0 ;rooms<roomList.size();rooms++){
-                // Log.d("wert", " roomlist "+roomList.size());
 
-                List <String> store= roomList.get(rooms).getMacAddressList();
 
-                // Log.d("store", " storesize" + store.get(0));
-                List <MacAddress> ListOfMacs = new ArrayList<>();
-                for(int lister=0;lister<store.size();lister++){
-                    String mac=store.get(lister);
-                    Log.d("strmac", " string mac" + mac);
-                    //get individual string and store here
-                    //parse this string to get mac and its corresponding value differently
-                    objMac = parseMac(mac);
-                    Log.d("strmacobj", " string macobj" + objMac.getMac() + objMac.getStrength());
-                    //return a MacAddress object
-                    ListOfMacs.add(objMac); //add this mac address object into list
 
-                }
+        int roomsize= getCount(); //this is the size of the grid example 32x5 = 160
+        int [] sumofRoomvals = new int [roomsize];
+        int sum; //this is the variable to store the sum calculated for each grid cell
+        for (int i=0;i<roomsize;i++){ //this will run for each grid in the gridview
+            sum=0;
+            for(int x=0;x<fetchedMacs.length;x++){ //this loop will search each wifi MAC with the list in each grid of array
+                String MacOfRecvd=fetchedMacs[x].getMac();
+                int value=fetchedMacs[x].getStrength();
+                boolean ifFound=false;
+                for(int y=0;y<roomarr[i].getNumberofMacs();y++){ //search one particular Mac of Recieved list with the entire list of MACS in Room List
+                    List <String> recvList = roomarr[i].getMacAddressList();
+                    MacAddress newobj = parseMac(recvList.get(y));
+                    if(MacOfRecvd.equals(newobj.getMac())){
+                        ifFound=true;
+                        int sumOf=value-newobj.getStrength();
+                        if (sumOf < 0) {
+                            sum += Math.abs(sumOf);
 
-                Log.d("roomwwwwwwww", "roomssssLIISSSIISISISI: " + ListOfMacs.size());
-                for(int w=0;w<roomsize;w++) {
-                    for (int x = 0; x < ListOfMacs.size(); x++) { //eg list of macs for one room is 5 so x=5
-                        for (int y = 0; y < fetchedMacs.length; y++) {
-                            Log.d("msg", "ListOMacs: " + ListOfMacs.get(x).getMac() + " Fetched: " + fetchedMacs[y].getMac());
-                            if (ListOfMacs.get(x).getMac().equals(fetchedMacs[y].getMac())) { //if the mac of room matches mac of fetched data
-                                int sum = ListOfMacs.get(x).getStrength() - fetchedMacs[y].getStrength();
-                                Log.d("msgsum", "sums is: " + Math.abs(sum));
-                                if (sum < 0) {
-                                    totalDiff += Math.abs(sum);
-
-                                } else {
-                                    totalDiff += sum;
-                                }
-                            }
+                        } else {
+                            sum += sumOf;
                         }
-                        SumOfRoomValues[w] = totalDiff; //stores difference for one room
-                        totalDiff = 0;
-                        Log.d("tototototo", "sums is: " + totalDiff);
                     }
-
                 }
-
-
-                for(int p = 0 ; p < SumOfRoomValues.length; p++){
-                    Log.d("asdf", "sumofroommssmms: "  + SumOfRoomValues[p]);
-                    //ListOfMacs.get()
+                if(ifFound!=true){
+                    sum+=10;//error correction
                 }
-                //after this for loop is done we will have a list (of type MacAddresses) that contains mac values for a particular room
-                //                //if(fetchedMacs[PhoneMac]==ListOfMacs[//])
-
-
             }
+            sumofRoomvals[i]=sum;
         }
-        Log.d("sumval", "xxx: "  + SumOfRoomValues.length);
 
-            Log.d("xxx", "sumofroommssmms: "  + SumOfRoomValues[0]+SumOfRoomValues[1]+SumOfRoomValues[2]+SumOfRoomValues[3]+SumOfRoomValues[4]);
-            //ListOfMacs.get()
+        for(int i=0;i<sumofRoomvals.length;i++){
+            Log.d("lowest","lowestvalue :" + sumofRoomvals[i]) ;
+        }
 
-        int lowestIndex=returnLowest(SumOfRoomValues);
-        Log.d("lowest","lowestvalue :" + SumOfRoomValues[lowestIndex] + " lowestindex: "  + lowestIndex);
+        //int lowestIndex=returnLowest(sumofRoomvals);
+        //Log.d("lowest","lowestvalue :" + SumOfRoomValues[lowestIndex] + " lowestindex: "  + lowestIndex);
     }
 
 

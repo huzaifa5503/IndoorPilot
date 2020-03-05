@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import java.io.BufferedReader;
@@ -24,6 +26,7 @@ import org.w3c.dom.NodeList;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     GridView gridview;
@@ -42,7 +45,30 @@ public class MainActivity extends AppCompatActivity {
         Log.d("size", "arraysize: "+ gridsize);
         gridview.setAdapter(new TextAdapter(this, gridsize));
 
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String desc="";
+
+                switch (position) {
+                    case 0:
+                        Toast.makeText(getApplicationContext(), desc , Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1:
+                        Toast.makeText(getApplicationContext(), "Second item clicked" , Toast.LENGTH_SHORT).show();
+                        break;
+
+                }
+            }
+        });
+
+
+
+
+
     }
+
+
 
     public int readIndoorData() {
 

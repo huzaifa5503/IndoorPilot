@@ -56,6 +56,9 @@ public class Room {
         return macAddressList;
     }
 
+    public int getNumberofMacs(){
+        return macAddressList.size();
+    }
     public void setMacAddressList(List<String> macAddressList) {
         this.macAddressList = macAddressList;
     }
