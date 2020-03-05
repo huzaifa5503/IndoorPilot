@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=9D:27:5E:40:B1:16:74:00:4A:2C:E8:95:8A:D1:4C:6D:77:14:F6:27%3Bcom.nuces.indoorpilot
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    9D:27:5E:40:B1:16:74:00:4A:2C:E8:95:8A:D1:4C:6D:77:14:F6:27
+
+    SHA-1 certificate fingerprint:
+    9D:27:5E:40:B1:16:74:00:4A:2C:E8:95:8A:D1:4C:6D:77:14:F6:27
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBSZ8D8uVtpiQIEZls8nWXrEe8fuhT51yE</string>
+</resources>

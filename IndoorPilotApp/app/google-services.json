@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "308448651987",
+    "firebase_url": "https://indoorpilot.firebaseio.com",
+    "project_id": "indoorpilot",
+    "storage_bucket": "indoorpilot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308448651987:android:2af26fdaa70e15c467c226",
+        "android_client_info": {
+          "package_name": "com.nuces.indoorpilot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "308448651987-k9loobo8qiuh56jeolimqcf9ec32su89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSZ8D8uVtpiQIEZls8nWXrEe8fuhT51yE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "308448651987-k9loobo8qiuh56jeolimqcf9ec32su89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
