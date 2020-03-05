@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:orientation="horizontal"
+    android:layout_height="fill_parent"
+  >
+
 
 
     <HorizontalScrollView android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         >
 
         <FrameLayout
@@ -17,8 +19,8 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout_gridtableLayout"
-                android:layout_width="900dp"
-                android:layout_height="match_parent"
+                android:layout_width="2100dp"
+                android:layout_height="740dp"
                 android:orientation="horizontal">
 
 
@@ -29,10 +31,11 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:background="#8c898f"
-                    android:columnWidth="150dp"
+                    android:columnWidth="400dp"
                     android:gravity="center"
                     android:horizontalSpacing="5dp"
-                    android:numColumns="8"
+                    android:backgroundTint="@android:color/primary_text_dark_nodisable"
+                    android:numColumns="32"
                     android:scrollbarAlwaysDrawHorizontalTrack="true"
                     android:scrollbarAlwaysDrawVerticalTrack="true"
                     android:scrollbars="horizontal"

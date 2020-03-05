@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     public int readIndoorData() {
 
-        InputStream is = getResources().openRawResource(R.raw.indoor);
+        InputStream is = getResources().openRawResource(R.raw.fast_building);
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(is, Charset.forName("UTF-8"))
         );

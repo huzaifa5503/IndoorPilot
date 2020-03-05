@@ -88,6 +88,8 @@ public class TextAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+
+        Log.d("ival", "value I KIII: "+ i);
         String[] fetchedMacs={"58B6330C6EC8=47","58B6330C6DF4=35","58B6330CJ788=33","58B6330C67GG=29"}; //the value of MACS and their strengths fetched from phone
         int fetchedMacsLen=fetchedMacs.length;
         macList_phone=new MacAddress[fetchedMacsLen];
@@ -110,7 +112,7 @@ public class TextAdapter extends BaseAdapter {
         String value = Integer.toString(val);
         try {
             ArrayList<HashMap<String, String>> userList = new ArrayList<>();
-            InputStream istream = mycontext.getAssets().open("indoor.xml");
+            InputStream istream = mycontext.getAssets().open("check.xml");
             DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = builderFactory.newDocumentBuilder();
             Document doc = docBuilder.parse(istream);
@@ -157,45 +159,41 @@ public class TextAdapter extends BaseAdapter {
 
 
 
-                        //MacAddress savedStr = parseMac("58B6330C6EC8=47");
 
-                       //List<String> macList = new ArrayList<String>(Arrays.asList(mac.split("\n")));
-
-
-
-                        //macadds.add(mac);
-                        //aik aur for loop
-                        //store all macs in a list
 
 
                         if(Integer.parseInt(num)==IndoorData[i]){
                             Log.d("stackoverflow","values got" + num + name);
-                            tv.setTextSize(15);
+                            tv.setTextSize(12);
                             if(Integer.parseInt(num)<0){
-                                tv.setBackgroundColor(Color.parseColor("#000000"));
+                                tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                                tv.setTextColor(Color.parseColor("#000000"));
                             }
                             else{
-                                tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                                tv.setBackgroundColor(Color.parseColor("#000000"));
+                                tv.setTextColor(Color.parseColor("#FFFFFF"));
 
                             }
 
-                            tv.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 250));
+                            tv.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, 350));
 
-                            tv.setText(name);
+                            if (name.equals("Path"))
+                            tv.setText("");
+                            else{
+                                tv.setText(name);
+                            }
                         }
 
 
-                        //String city = el.getElementsByTagName("city").item(0).getTextContent();
-                    }
-                }
-            }
-            CalculateLocation(macList_phone, roomList);
-           // Log.d("sizer","arraylist size is  "+  macadds.size());
-           // for(int n = 0; n < macadds.size(); n++) {
-               // System.out.print(macadds.get(n));
-              //  Log.d("macer","arraylist is as follows  "+  macadds.get(n));
 
-           // }
+                    }
+
+                }
+
+            }
+            //CalculateLocation(macList_phone, roomList);
+
+
 
 
 
@@ -273,9 +271,9 @@ public class TextAdapter extends BaseAdapter {
             return tv;
         }*/
 
+
         return tv;
     }
-
 
 
     public int[] readIndoorData() {
@@ -287,7 +285,7 @@ public class TextAdapter extends BaseAdapter {
 
         String linesfromfile = "";
         String[] token = {""};
-        InputStream inputStream = mycontext.getResources().openRawResource(R.raw.indoor);
+        InputStream inputStream = mycontext.getResources().openRawResource(R.raw.fast_building);
         BufferedReader inputreader = new BufferedReader(
                 new InputStreamReader(inputStream, Charset.forName("UTF-8"))
         );
@@ -313,11 +311,14 @@ public class TextAdapter extends BaseAdapter {
         }
         return gridMap;
     }
+
+
     private static String getValue(String tag, Element element, int val) {
         NodeList nodeList = element.getElementsByTagName(tag).item(val).getChildNodes();
         Node node = nodeList.item(val);
         return node.getNodeValue();
     }
+
 
     protected String getNodeValue(String tag, Element element) {
         NodeList nodeList = element.getElementsByTagName(tag);
@@ -335,6 +336,7 @@ public class TextAdapter extends BaseAdapter {
         return "";
     }
 
+
     public MacAddress parseMac(String a){
 
         MacAddress macadd = new MacAddress();
@@ -347,6 +349,7 @@ public class TextAdapter extends BaseAdapter {
 
 
     }
+
 
     public void CalculateLocation( MacAddress[] fetchedMacs,  List<Room> roomList){
         int totalDiff=0;
@@ -398,7 +401,7 @@ public class TextAdapter extends BaseAdapter {
                     }
 
                 }
-                //aaarai hai
+
 
                 for(int p = 0 ; p < SumOfRoomValues.length; p++){
                     Log.d("asdf", "sumofroommssmms: "  + SumOfRoomValues[p]);
@@ -418,6 +421,7 @@ public class TextAdapter extends BaseAdapter {
         int lowestIndex=returnLowest(SumOfRoomValues);
         Log.d("lowest","lowestvalue :" + SumOfRoomValues[lowestIndex] + " lowestindex: "  + lowestIndex);
     }
+
 
     public int returnLowest(int[] arr){ //returns the index of the lowest element in the array
         int lowest=9999;
