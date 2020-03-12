@@ -1,2 +1,6 @@
 # IndoorPilot
 Final Year Project  (Indoor Pilot)
+Indoor Pilot is a software that solves the problem of indoor positioning using Wireless access points (Wi-Fi). The rapid development of mobile Internet has offered the opportunity for Wi-Fi indoor positioning to come under the spotlight due to its low cost. It helps you navigate confidently inside the university premises without any difficulty and wastage of your precious time.
+This project is primarily composed of 3 components which include the Android App module, the Web App Module and the Map buidling module.
+The home screen of the mobile application shows the current location of the user(outdoors) and an icon is displayed on the map if there are any buildings nearby which are supported by this app. Once a user selects the building, the data for that building(csv file containing the location of rooms and size of building in the form of grids and xml file containing data that each grid corresponds to) will be fetched from firebase and displayed to the user accordingly.
+The web part of the project focuses on marketing our idea to potential customers and also provides an admin module. The admin module is used to create the maps for different buildings and upload them to firebase from where our android app fetches them. Any addition in terms of buildings will be done by the admin using the web portal.
