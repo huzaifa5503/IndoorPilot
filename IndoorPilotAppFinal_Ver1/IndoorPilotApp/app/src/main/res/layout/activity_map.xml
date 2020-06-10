@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:orientation="horizontal"
+    android:layout_height="fill_parent">
+
+
+    <HorizontalScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout_gridtableLayout"
+                android:layout_width="2100dp"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/search_text"
+                    android:layout_width="227dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5000dp"
+                    android:ems="10"
+                    android:hint="Search for room/person"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/button_search"
+                    android:layout_width="158dp"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/search_icon"
+                    android:text="Search" />
+
+                <GridView
+                    android:id="@+id/Gridview1"
+                    android:layout_width="700dp"
+                    android:layout_height="2000dp"
+                    android:background="#8c898f"
+                    android:backgroundTint="@android:color/primary_text_dark_nodisable"
+                    android:columnWidth="200dp"
+                    android:gravity="center"
+                    android:horizontalSpacing="5dp"
+                    android:numColumns="16"
+                    android:scrollbarAlwaysDrawHorizontalTrack="true"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbars="horizontal"
+                    android:verticalSpacing="5dp">
+
+                </GridView>
+
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </HorizontalScrollView>
+
+
+
+</RelativeLayout>

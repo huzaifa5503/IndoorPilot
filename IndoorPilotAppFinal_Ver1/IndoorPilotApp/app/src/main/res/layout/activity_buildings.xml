@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <!-- Editext for Search -->
+
+    <EditText
+        android:id="@+id/inputSearch"
+        style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/Darzi"
+        android:drawableRight="@drawable/search_icon"
+        android:hint="Search buildings.."
+        android:inputType="textVisiblePassword"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="15sp" />
+
+    <ListView
+        android:id="@+id/list_buildings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/background_buidling"
+        android:divider="@color/colorWhite"
+        android:dividerHeight="3px"
+        android:textAlignment="center" />
+</LinearLayout>
